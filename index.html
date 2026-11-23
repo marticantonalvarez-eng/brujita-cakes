@@ -372,21 +372,7 @@ body:has(.cookies:not([hidden])){padding-bottom:60px}
  .susu-hero .hero-photo,.susu-hero .hero-brand-heading,.susu-hero .hero-intro{animation:none!important;transition:none!important}
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Bakery","name":"Brujita Cakes","description":"Pastelería creativa y tartas personalizadas en Mataró","telephone":"+34667534829","address":{"@type":"PostalAddress","streetAddress":"El Torrent, 12","postalCode":"08302","addressLocality":"Mataró","addressRegion":"Barcelona","addressCountry":"ES"},"sameAs":["https://www.instagram.com/brujita_cakes/"],"image":"foto-03.jpg"}
-// Ocultar los dos controles flotantes mientras se ve la portada en móvil.
-(function(){
- const hero=document.getElementById('inicio');
- if(!hero)return;
- const check=()=>{
-   if(window.innerWidth>750){document.body.classList.remove('mobile-hero-visible');return;}
-   const r=hero.getBoundingClientRect();
-   document.body.classList.toggle('mobile-hero-visible',r.bottom>window.innerHeight*.35 && r.top<window.innerHeight*.7);
- };
- check();
- window.addEventListener('scroll',check,{passive:true});
- window.addEventListener('resize',check,{passive:true});
-})();
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Bakery","name":"Brujita Cakes","description":"Pastelería creativa y tartas personalizadas en Mataró","telephone":"+34667534829","address":{"@type":"PostalAddress","streetAddress":"El Torrent, 12","postalCode":"08302","addressLocality":"Mataró","addressRegion":"Barcelona","addressCountry":"ES"},"sameAs":["https://www.instagram.com/brujita_cakes/"],"image":"foto-03.jpg"}</script>
 </head>
 <body>
 <a class="skip" href="#principal">Saltar al contenido</a>
@@ -463,5 +449,19 @@ const legal={aviso:['Aviso legal','[PENDIENTE DE COMPLETAR]: titular legal, NIF,
 qs('#magic').addEventListener('click',()=>{if(reduced.matches)return;const chars=['✦','✧','✳','🎀','🧁'];for(let i=0;i<28;i++){const s=document.createElement('span');s.className='sparkle';s.textContent=chars[i%chars.length];s.style.left=(Math.random()*94+3)+'vw';s.style.setProperty('--size',(12+Math.random()*13)+'px');s.style.setProperty('--dur',(2.4+Math.random()*1.4)+'s');s.style.setProperty('--drift',(Math.random()*150-75)+'px');document.body.append(s);s.addEventListener('animationend',()=>s.remove(),{once:true})}});
 // Purpurina del cursor con límite de frecuencia; sin rastro en táctil o reduced motion.
 if(matchMedia('(pointer:fine)').matches&&!reduced.matches){let prev=0,count=0;document.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'||Date.now()-prev<75)return;prev=Date.now();if(++count>130){count=0;return}const dot=document.createElement('span');dot.className='trail';dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';dot.style.background=Math.random()>.5?'#e7a4bd':'#d8b16a';document.body.append(dot);setTimeout(()=>dot.remove(),600)},{passive:true})}
+
+// Ocultar los dos controles flotantes mientras se ve la portada en móvil.
+(function(){
+ const hero=document.getElementById('inicio');
+ if(!hero)return;
+ const check=()=>{
+   if(window.innerWidth>750){document.body.classList.remove('mobile-hero-visible');return;}
+   const r=hero.getBoundingClientRect();
+   document.body.classList.toggle('mobile-hero-visible',r.bottom>window.innerHeight*.35 && r.top<window.innerHeight*.7);
+ };
+ check();
+ window.addEventListener('scroll',check,{passive:true});
+ window.addEventListener('resize',check,{passive:true});
+})();
 </script>
 </body></html>
