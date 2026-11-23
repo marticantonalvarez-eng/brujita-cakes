@@ -100,15 +100,73 @@ body:has(.cookies:not([hidden])){padding-bottom:60px}
 .hours-list span:last-child{text-align:right}
 @media(max-width:750px){.hero-photo{object-position:center center;transform:scale(1.015)}.hero:before{filter:blur(30px) brightness(.86)}.shopfront img{height:240px}.seasonal-photo{max-width:270px}}
 @media(prefers-reduced-motion:reduce){.hero-photo{transform:none}.shopfront,.seasonal-photo{transform:none}}
+
+/* Portada editorial inspirada en la composición de Susu Cakes. Resto de la web intacto. */
+.header.susu-header{position:sticky;top:0;margin-bottom:-77px;z-index:45;border-bottom:1px solid transparent;background:transparent;backdrop-filter:none;transition:background .35s ease,border-color .35s ease,box-shadow .35s ease}
+.header.susu-header.is-scrolled{background:rgba(252,247,241,.97);border-color:rgba(53,42,46,.1);backdrop-filter:blur(16px);box-shadow:0 6px 24px #00000012}
+.susu-header .brand-with-logo{flex:none;min-width:72px}
+.susu-header .brand-logo-original{display:block;width:76px;height:76px;object-fit:cover;border-radius:50%;background:#fff;border:2px solid #fff;box-shadow:0 5px 16px #00000028;transition:width .3s ease,height .3s ease}
+.susu-header.is-scrolled .brand-logo-original{width:62px;height:62px}
+.susu-header:not(.is-scrolled) .nav-links a{color:#fff;text-shadow:0 1px 8px #0008}
+.susu-header:not(.is-scrolled) .nav-cta{background:#f4b7cc;border-color:#f4b7cc;color:#352a2e}
+.susu-header:not(.is-scrolled) .menu-toggle{color:#fff}
+.hero.susu-hero{position:relative;min-height:max(800px,100svh);max-height:none;background:#4c5b49;isolation:isolate;display:block}
+.hero.susu-hero:before{content:"";position:absolute;z-index:-2;inset:-45px;background:url("foto-03.jpg") center 52%/cover no-repeat;filter:blur(32px) brightness(.53) saturate(.85);transform:scale(1.18);pointer-events:none}
+.hero.susu-hero:after{position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(14,25,18,.69) 0%,rgba(17,29,19,.40) 54%,rgba(19,30,19,.22) 100%),linear-gradient(0deg,rgba(15,25,18,.74) 0%,transparent 42%);pointer-events:none}
+.susu-hero .hero-photo{position:absolute;z-index:0;left:auto;right:4.8%;top:48%;width:clamp(340px,43vw,720px);height:min(72svh,720px);max-height:780px;object-fit:cover;object-position:center 50%;filter:none;transform:translateY(-50%) rotate(1.5deg);border:9px solid rgba(255,248,241,.90);border-radius:3px;box-shadow:0 35px 90px rgba(0,0,0,.35);animation:brujitaHeroPhoto 1.15s cubic-bezier(.22,1,.36,1) both}
+.susu-hero .hero-content{position:relative;z-index:2;min-height:max(800px,100svh);max-width:1600px;padding:145px clamp(25px,5.8vw,108px) 205px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.susu-hero .hero-brand-heading{font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(110px,13.1vw,220px);letter-spacing:-.073em;line-height:.76;color:#fff;max-width:none;text-shadow:0 12px 45px rgba(0,0,0,.27);margin:0 0 clamp(29px,4vw,65px);position:relative;z-index:3;animation:brujitaHeroTitle .95s .12s both}
+.susu-hero .hero-brand-heading span{display:block}
+.susu-hero .hero-brand-heading span:nth-child(2){margin-left:clamp(34px,6vw,110px);font-style:italic;color:#f9d8e2}
+.susu-hero .hero-intro{max-width:500px;animation:brujitaHeroTitle .9s .34s both}
+.susu-hero .hero-line{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(24px,2.3vw,39px);line-height:1.15;margin:0 0 15px;text-shadow:0 3px 12px #0006}
+.susu-hero .hero-description{font-size:clamp(14px,1.1vw,17px);line-height:1.65;max-width:410px;margin:0 0 26px;color:#fff9}
+.susu-hero .hero-actions{display:flex;gap:25px;align-items:center;flex-wrap:wrap}
+.susu-hero .hero-main-button{background:#f4b7cc;color:#352a2e;border-color:#f4b7cc;min-height:50px;padding:15px 27px}
+.susu-hero .hero-secondary{color:#fff;text-decoration:none;border-bottom:1px solid #fff8;padding:7px 0;font-weight:600;font-size:14px}
+.susu-hero .hero-secondary span{font-size:25px;vertical-align:-2px;margin-left:6px}
+.susu-hero .hero-shortcuts{position:absolute;z-index:5;bottom:28px;left:clamp(25px,5.8vw,108px);display:flex;align-items:stretch;gap:10px;max-width:calc(100% - 220px)}
+.susu-hero .hero-shortcuts a{display:flex;align-items:center;gap:12px;width:clamp(170px,17vw,247px);padding:8px 15px 8px 8px;background:rgba(252,247,241,.94);color:#352a2e;text-decoration:none;backdrop-filter:blur(8px);border:1px solid #ffffffaa;transition:transform .25s ease,background .25s ease}
+.susu-hero .hero-shortcuts a:hover{transform:translateY(-6px);background:#fff}
+.susu-hero .hero-shortcuts img{height:58px;width:58px;object-fit:cover;flex:0 0 58px}
+.susu-hero .hero-shortcuts strong{display:block;font-family:'DM Serif Display',Georgia,serif;font-size:19px;font-weight:400;line-height:1.1}
+.susu-hero .hero-shortcuts small{display:block;font-size:11px;margin-top:4px;color:#77696b;line-height:1.2}
+.susu-hero .hero-scroll-cue{position:absolute;z-index:4;right:clamp(20px,4vw,65px);bottom:35px;display:flex;align-items:center;gap:12px;color:#fff;font-size:11px;letter-spacing:.05em}
+.susu-hero .hero-scroll-cue span{font-size:21px}
+@keyframes brujitaHeroTitle{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+@keyframes brujitaHeroPhoto{from{opacity:0;transform:translateY(calc(-50% + 26px)) rotate(4deg) scale(1.04)}to{opacity:1;transform:translateY(-50%) rotate(1.5deg) scale(1)}}
+@media(max-width:1050px){.susu-hero .hero-photo{right:2.5%;width:45vw;height:min(65svh,680px)}.susu-hero .hero-brand-heading{font-size:clamp(88px,12.6vw,143px)}.susu-hero .hero-shortcuts{max-width:calc(100% - 65px)}.susu-hero .hero-scroll-cue{display:none}.susu-hero .hero-shortcuts a{width:clamp(165px,26vw,240px)}}
+@media(max-width:750px){
+ .header.susu-header{margin-bottom:-67px}.susu-header .brand-logo-original{width:61px;height:61px}.susu-header.is-scrolled .brand-logo-original{width:54px;height:54px}
+ .susu-header:not(.is-scrolled) .nav-links.open a{color:#352a2e;text-shadow:none}
+ .susu-header .nav-links.open{background:#fcf7f1}
+ .hero.susu-hero{min-height:960px;min-height:max(950px,112svh)}
+ .susu-hero .hero-content{min-height:max(950px,112svh);justify-content:flex-start;padding:133px 23px 230px}
+ .susu-hero .hero-brand-heading{font-size:clamp(72px,16vw,130px);line-height:.78;letter-spacing:-.06em;margin-bottom:0}
+ .susu-hero .hero-brand-heading span:nth-child(2){margin-left:34px}
+ .susu-hero .hero-photo{left:50%;right:auto;top:49%;width:min(76vw,480px);height:min(41svh,410px);object-fit:cover;transform:translate(-50%,-50%) rotate(2deg);border-width:7px;box-shadow:0 18px 55px #0007}
+ .susu-hero .hero-intro{margin-top:clamp(360px,43svh,480px);max-width:440px}
+ .susu-hero .hero-line{font-size:clamp(24px,6vw,34px);margin-bottom:9px}
+ .susu-hero .hero-description{font-size:13px;max-width:370px;margin-bottom:16px}
+ .susu-hero .hero-shortcuts{bottom:24px;left:0;right:0;padding:0 18px;max-width:none;width:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;gap:10px}
+ .susu-hero .hero-shortcuts::-webkit-scrollbar{display:none}
+ .susu-hero .hero-shortcuts a{width:205px;min-width:205px;scroll-snap-align:start}
+ .susu-hero .hero-shortcuts img{height:51px;width:51px;flex-basis:51px}
+ .susu-hero .hero-shortcuts strong{font-size:17px}
+ .susu-hero .hero-scroll-cue{display:none}
+ .susu-header:not(.is-scrolled) .menu-toggle{color:#fff}
+}
+@media(max-width:430px){.susu-hero .hero-content{padding-top:118px}.susu-hero .hero-brand-heading{font-size:clamp(70px,16.5vw,88px)}.susu-hero .hero-photo{top:45.5%;width:82vw;height:34svh}.susu-hero .hero-intro{margin-top:clamp(335px,36svh,410px)}.susu-hero .hero-shortcuts a{width:187px;min-width:187px}.susu-hero .hero-line{font-size:25px}}
+@media(prefers-reduced-motion:reduce){.susu-hero .hero-photo,.susu-hero .hero-brand-heading,.susu-hero .hero-intro{animation:none!important}.susu-header .brand-logo-original{transition:none}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Bakery","name":"Brujita Cakes","description":"Pastelería creativa y tartas personalizadas en Mataró","telephone":"+34667534829","address":{"@type":"PostalAddress","streetAddress":"El Torrent, 12","postalCode":"08302","addressLocality":"Mataró","addressRegion":"Barcelona","addressCountry":"ES"},"sameAs":["https://www.instagram.com/brujita_cakes/"],"image":"foto-03.jpg"}</script>
 </head>
 <body>
 <a class="skip" href="#principal">Saltar al contenido</a>
 <div class="notice">¿Tienes una fecha en mente? <a href="https://wa.me/34667534829" rel="noopener" target="_blank">Consúltanos por WhatsApp</a> antes de encargar.</div>
-<header class="header"><nav aria-label="Navegación principal" class="nav"><a aria-label="Brujita Cakes, inicio" class="brand" href="#inicio"><span aria-hidden="true" class="brand-mark">✳</span><span><span class="brand-name">Brujita Cakes</span><span class="brand-sub">repostería creativa</span></span></a><div class="nav-links" id="navLinks"><a href="#tartas">Tartas</a><a href="#dulces">Cupcakes y dulces</a><a href="#amedida">A medida</a><a href="#talleres">Talleres</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></div><a class="btn nav-cta" href="#contacto">Pide presupuesto </a><button aria-controls="navLinks" aria-expanded="false" aria-label="Abrir menú" class="menu-toggle" id="menuToggle">☰</button></nav></header>
+<header class="header susu-header" id="siteHeader"><nav aria-label="Navegación principal" class="nav"><a aria-label="Brujita Cakes, inicio" class="brand brand-with-logo" href="#inicio"><img class="brand-logo-original" src="logo-brujita-cakes.png" alt="Brujita Cakes, repostería creativa" width="78" height="78"/></a><div class="nav-links" id="navLinks"><a href="#tartas">Tartas</a><a href="#dulces">Cupcakes y dulces</a><a href="#amedida">A medida</a><a href="#talleres">Talleres</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></div><a class="btn nav-cta" href="#contacto">Pide presupuesto</a><button aria-controls="navLinks" aria-expanded="false" aria-label="Abrir menú" class="menu-toggle" id="menuToggle">☰</button></nav></header>
 <main id="principal">
-<section class="hero" id="inicio"><img alt="Tarta personalizada de granja con tractor verde y animales para Mateo" class="hero-photo" fetchpriority="high" src="foto-03.jpg"/><div class="hero-content"><h1>Pues claro que podemos ponerle un tractor.</h1><p>Y si la fiesta va de Animal Crossing, de fútbol o de los ochenta, también tenemos ideas. Cuéntanos la tuya.</p><a class="btn" href="#amedida">Pide tu tarta</a></div></section>
+<section class="hero susu-hero" id="inicio"><img alt="Tarta personalizada de granja con tractor verde y animales para Mateo" class="hero-photo" fetchpriority="high" src="foto-03.jpg"/><div class="hero-content"><h1 class="hero-brand-heading"><span>Brujita</span><span>Cakes.</span></h1><div class="hero-intro"><p class="hero-line">Pues claro que podemos ponerle un tractor.</p><p class="hero-description">Tartas que se parecen a quien las pide. Y sí, también hacemos las ideas más inesperadas.</p><div class="hero-actions"><a class="btn hero-main-button" href="#amedida">Pide tu tarta</a><a class="hero-secondary" href="#galeria">Ver trabajos <span aria-hidden="true">—</span></a></div></div></div><div class="hero-shortcuts" aria-label="Descubre Brujita Cakes"><a href="#tartas"><img src="foto-13.jpg" alt="" loading="lazy"/><span><strong>Tartas a medida</strong><small>Para cada fiesta</small></span></a><a href="#talleres"><img src="foto-09.jpg" alt="" loading="lazy"/><span><strong>Talleres</strong><small>Manos a la masa</small></span></a><a href="#galeria"><img src="foto-07.jpg" alt="" loading="lazy"/><span><strong>Nuestros trabajos</strong><small>Ideas que ya son tartas</small></span></a></div><div class="hero-scroll-cue" aria-hidden="true">Desliza para descubrir <span>↓</span></div></section>
 <section class="intro"><h2 class="reveal">¿Un tractor encima de la tarta?<br/><span class="marker">Dinos de qué color.</span></h2><p class="reveal">Una tarta no tiene por qué parecerse a otra. Aquí caben tus colores, tus aficiones y hasta esa broma que solo entiende tu familia.</p></section>
 <section class="cakes" id="tartas"><div class="section-head"><h2 class="reveal">¿De qué va<br/>tu fiesta?</h2></div><div class="cake-stage"><a aria-label="Consultar una boda con rosas rojas" class="cake one reveal" href="#amedida"><div class="frame"><img alt="Tarta de boda blanca con rosas rojas y figura de pareja" loading="lazy" src="foto-13.jpg"/></div><strong>Una boda con rosas rojas</strong><small>Consultar esta idea</small></a><a aria-label="Consultar pandas para rita" class="cake two reveal" href="#amedida"><div class="frame"><img alt="Tarta de panda con bambú y decoración verde" loading="lazy" src="foto-15.jpg"/></div><strong>Pandas para Rita</strong><small>Consultar esta idea</small></a><a aria-label="Consultar un dieciocho por todo lo alto" class="cake three reveal" href="#amedida"><div class="frame"><img alt="Tarta de cumpleaños de 18 años con decoración azul y blanca" loading="lazy" src="foto-11.jpg"/></div><strong>Un dieciocho por todo lo alto</strong><small>Consultar esta idea</small></a></div></section>
 <section class="sweets" id="dulces"><div class="sweets-inner"><div class="sweets-photo reveal"><img alt="Cesta de regalo de cumpleaños con repostería envasada y lazos" loading="lazy" src="foto-08.jpg"/><h2>Hay regalos que se abren y se comen.</h2></div><div class="sweets-copy"><p>También hay dulces decorados, cupcakes y detalles de repostería para regalar. Pregúntanos qué se puede preparar para tu ocasión.</p><div class="sweets-items"><span>Cupcakes decorados</span><span>Dulces para regalar</span><span>Detalles para celebraciones</span></div><a class="btn outline" href="#contacto">Consultar dulces</a><figure class="seasonal-photo"><img alt="Expositor de regalos y cajas de repostería decoradas para Navidad" loading="lazy" src="foto-12.jpg"/><figcaption>También hemos preparado detalles para Navidad.</figcaption></figure></div></div></section>
@@ -138,6 +196,10 @@ body:has(.cookies:not([hidden])){padding-bottom:60px}
 <div aria-label="Aviso de cookies" class="cookies" hidden="" id="cookies" role="region"><strong>Preferencias de cookies</strong><p>Este sitio utiliza almacenamiento local para recordar tu elección. No utiliza cookies de publicidad ni de analítica.</p><div class="cookies-actions"><button id="cookieAccept">Entendido</button><button class="alt" id="cookieDecline">No guardar preferencia</button></div></div>
 <script>
 'use strict';
+// Cabecera transparente sobre la portada; fondo crema a partir del scroll.
+const susuHeader=document.getElementById('siteHeader');
+if(susuHeader){const updateSusuHeader=()=>susuHeader.classList.toggle('is-scrolled',window.scrollY>55);updateSusuHeader();window.addEventListener('scroll',updateSusuHeader,{passive:true});}
+
 // Horario facilitado por el negocio (Europe/Madrid). Índices 0=domingo a 6=sábado.
 const HORARIO = {0:[],1:[["17:00","20:00"]],2:[["09:30","13:00"],["17:00","20:00"]],3:[["09:30","13:00"],["17:00","20:00"]],4:[["09:30","13:00"],["17:00","20:00"]],5:[["09:30","13:00"],["17:00","20:00"]],6:[["10:00","14:00"]]};
 const WHATSAPP = '34667534829';
