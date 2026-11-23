@@ -269,8 +269,124 @@ body:has(.cookies:not([hidden])){padding-bottom:60px}
  .susu-hero .hero-photo{animation:none!important}
  .cake-stage .cake,.gallery-item{transition:none!important}
 }
+
+/* Móvil editorial v2: composición en flujo, sin desplazamientos ni recortes. */
+@media (max-width:750px){
+  .header.susu-header,.header.susu-header.is-scrolled{
+    position:sticky;top:0;margin-bottom:0;z-index:45;
+    background:rgba(252,247,241,.98);backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(53,42,46,.10);box-shadow:0 3px 14px #0000000d;
+  }
+  .susu-header .nav{height:70px;padding-inline:19px}
+  .susu-header .brand-logo-original,.susu-header.is-scrolled .brand-logo-original{
+    height:56px;width:56px;object-fit:cover;box-shadow:0 2px 10px #0002
+  }
+  .susu-header .menu-toggle,.susu-header:not(.is-scrolled) .menu-toggle{
+    color:var(--green);font-size:27px
+  }
+  .susu-header .nav-links{top:70px}
+  .hero.susu-hero{
+    display:grid!important;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto auto;
+    align-items:start;justify-items:stretch;gap:0;isolation:isolate;
+    width:100%;max-width:100%;min-height:0!important;max-height:none!important;
+    padding:31px 21px 35px;overflow:hidden;background:#263b2f
+  }
+  .hero.susu-hero:before{inset:-45px;z-index:-2;background-position:center;filter:blur(30px) brightness(.62) saturate(.84)}
+  .hero.susu-hero:after{
+    inset:0;z-index:-1;background:linear-gradient(180deg,rgba(16,28,20,.36),rgba(18,30,22,.63) 61%,rgba(14,29,19,.86));
+    pointer-events:none
+  }
+  .susu-hero .hero-content{
+    display:contents!important;min-height:0!important;max-width:none!important;
+    margin:0!important;padding:0!important
+  }
+  .susu-hero .hero-brand-heading{
+    grid-column:1;grid-row:1;position:relative;z-index:2;
+    width:100%;max-width:100%;margin:0 0 22px!important;padding:0;
+    font-size:clamp(64px,16.8vw,115px)!important;line-height:.82;
+    letter-spacing:-.065em;overflow-wrap:normal;text-shadow:0 5px 20px #0004;
+    animation:none!important;transform:none!important;
+  }
+  .susu-hero .hero-brand-heading span:nth-child(2){margin-left:clamp(20px,6vw,45px)}
+  .susu-hero .hero-photo{
+    grid-column:1;grid-row:2;position:relative!important;inset:auto!important;
+    display:block;width:min(100%,400px)!important;max-width:100%;height:auto!important;
+    max-height:none!important;aspect-ratio:1/1;margin:0 auto 26px!important;
+    object-fit:contain!important;object-position:center!important;
+    transform:none!important;animation:none!important;filter:none!important;
+    border:7px solid #fff8ef;border-radius:3px;background:#eee2d7;box-shadow:0 20px 55px #0005
+  }
+  .susu-hero .hero-intro{
+    grid-column:1;grid-row:3;position:relative;z-index:2;
+    width:100%;max-width:490px;margin:0 0 28px!important;padding:0!important;
+    transform:none!important;animation:none!important
+  }
+  .susu-hero .hero-line{font-size:clamp(26px,6.8vw,36px);line-height:1.08;margin:0 0 12px}
+  .susu-hero .hero-description{font-size:14px;line-height:1.55;margin:0 0 22px;max-width:420px}
+  .susu-hero .hero-actions{display:flex;gap:13px;align-items:center;flex-wrap:wrap}
+  .susu-hero .hero-main-button{min-height:49px;padding:13px 22px;font-size:13px}
+  .susu-hero .hero-secondary{font-size:13px;padding:7px 0}
+  .susu-hero .hero-shortcuts{
+    grid-column:1;grid-row:4;position:relative!important;inset:auto!important;z-index:3;
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;
+    max-width:100%!important;width:100%!important;margin:0!important;
+    padding:19px 0 0!important;overflow:visible;scroll-snap-type:none;
+    border-top:1px solid #ffffff45;
+  }
+  .susu-hero .hero-shortcuts a{
+    width:auto!important;min-width:0!important;max-width:100%;
+    display:flex;align-items:center;gap:9px;padding:8px;
+    border-radius:2px;transform:none!important;box-shadow:none
+  }
+  .susu-hero .hero-shortcuts a:nth-child(3){grid-column:1/-1}
+  .susu-hero .hero-shortcuts img{
+    display:block;width:50px;height:55px;flex:0 0 50px;
+    object-fit:contain;background:#f7e9e6
+  }
+  .susu-hero .hero-shortcuts strong{font-size:clamp(15px,4.1vw,18px);line-height:1.1}
+  .susu-hero .hero-shortcuts small{font-size:10px;line-height:1.2;margin-top:4px}
+  .susu-hero .hero-scroll-cue{display:none}
+  /* Los controles flotantes no invaden la portada ni el contenido superior. */
+  body.mobile-hero-visible .floating-wa,
+  body.mobile-hero-visible .magic{
+    opacity:0!important;visibility:hidden;pointer-events:none!important;
+    transform:translateY(15px)!important
+  }
+  .floating-wa{bottom:14px;right:12px;padding:11px 14px;font-size:12px;transition:opacity .2s ease,transform .2s ease}
+  .magic{bottom:16px;left:12px;height:42px;width:42px;font-size:22px;transition:opacity .2s ease,transform .2s ease}
+  .cookies:not([hidden]){z-index:53;max-height:33svh;overflow-y:auto}
+  .sweets-photo h2{max-width:94%}
+  .gallery-heading{max-width:100%;overflow-wrap:anywhere}
+  .workshop-collage img{max-width:100%}
+  .insta-grid a{min-width:0}
+}
+@media (max-width:390px){
+ .hero.susu-hero{padding:28px 17px 31px}
+ .susu-hero .hero-brand-heading{font-size:clamp(60px,16.7vw,66px)!important}
+ .susu-hero .hero-photo{width:100%!important;margin-bottom:23px!important}
+ .susu-hero .hero-line{font-size:clamp(25px,7vw,29px)}
+ .susu-hero .hero-shortcuts strong{font-size:15px}
+ .susu-hero .hero-shortcuts img{width:43px;flex-basis:43px;height:49px}
+}
+@media(prefers-reduced-motion:reduce){
+ .susu-hero .hero-photo,.susu-hero .hero-brand-heading,.susu-hero .hero-intro{animation:none!important;transition:none!important}
+}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Bakery","name":"Brujita Cakes","description":"Pastelería creativa y tartas personalizadas en Mataró","telephone":"+34667534829","address":{"@type":"PostalAddress","streetAddress":"El Torrent, 12","postalCode":"08302","addressLocality":"Mataró","addressRegion":"Barcelona","addressCountry":"ES"},"sameAs":["https://www.instagram.com/brujita_cakes/"],"image":"foto-03.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Bakery","name":"Brujita Cakes","description":"Pastelería creativa y tartas personalizadas en Mataró","telephone":"+34667534829","address":{"@type":"PostalAddress","streetAddress":"El Torrent, 12","postalCode":"08302","addressLocality":"Mataró","addressRegion":"Barcelona","addressCountry":"ES"},"sameAs":["https://www.instagram.com/brujita_cakes/"],"image":"foto-03.jpg"}
+// Ocultar los dos controles flotantes mientras se ve la portada en móvil.
+(function(){
+ const hero=document.getElementById('inicio');
+ if(!hero)return;
+ const check=()=>{
+   if(window.innerWidth>750){document.body.classList.remove('mobile-hero-visible');return;}
+   const r=hero.getBoundingClientRect();
+   document.body.classList.toggle('mobile-hero-visible',r.bottom>window.innerHeight*.35 && r.top<window.innerHeight*.7);
+ };
+ check();
+ window.addEventListener('scroll',check,{passive:true});
+ window.addEventListener('resize',check,{passive:true});
+})();
+</script>
 </head>
 <body>
 <a class="skip" href="#principal">Saltar al contenido</a>
