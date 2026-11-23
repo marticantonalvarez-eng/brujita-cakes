@@ -158,6 +158,117 @@ body:has(.cookies:not([hidden])){padding-bottom:60px}
 }
 @media(max-width:430px){.susu-hero .hero-content{padding-top:118px}.susu-hero .hero-brand-heading{font-size:clamp(70px,16.5vw,88px)}.susu-hero .hero-photo{top:45.5%;width:82vw;height:34svh}.susu-hero .hero-intro{margin-top:clamp(335px,36svh,410px)}.susu-hero .hero-shortcuts a{width:187px;min-width:187px}.susu-hero .hero-line{font-size:25px}}
 @media(prefers-reduced-motion:reduce){.susu-hero .hero-photo,.susu-hero .hero-brand-heading,.susu-hero .hero-intro{animation:none!important}.susu-header .brand-logo-original{transition:none}}
+
+/* Afinado responsive: la fotografía completa tiene prioridad y no se altera la vista de escritorio. */
+@media (min-width:751px) and (max-width:1024px){
+  .susu-hero .hero-photo{object-fit:contain;object-position:center;width:43vw;height:auto;max-height:72svh;background:rgba(252,247,241,.13)}
+  .cake-stage{min-height:715px}
+  .gallery-item img{object-fit:contain;background:rgba(255,255,255,.35)}
+  .insta-grid img{object-fit:contain;background:#f7eee9}
+  .workshop-collage img{object-fit:contain}
+  .nav-links{gap:9px}
+}
+@media (max-width:750px){
+  html,body{max-width:100%;overflow-x:clip}
+  .nav{gap:12px}
+  .susu-header .brand-with-logo{min-width:61px}
+  .susu-header .nav-links{z-index:5}
+  .susu-hero .hero-content{padding-top:116px;padding-bottom:225px;min-height:max(980px,115svh)}
+  .hero.susu-hero{min-height:max(980px,115svh)}
+  .susu-hero .hero-brand-heading{font-size:clamp(66px,15.4vw,116px);max-width:100%;margin:0}
+  .susu-hero .hero-brand-heading span:nth-child(2){margin-left:clamp(21px,7vw,54px)}
+  .susu-hero .hero-photo{
+     width:min(81vw,430px);height:min(39svh,400px);left:50%;top:44%;
+     transform:translate(-50%,-50%) rotate(1deg);
+     object-fit:contain;object-position:center;filter:none;background:rgba(248,241,233,.16);
+     border:6px solid rgba(255,250,245,.92);
+  }
+  .susu-hero .hero-intro{margin-top:clamp(365px,42svh,475px);max-width:100%;padding-right:5px}
+  .susu-hero .hero-line{font-size:clamp(25px,6vw,33px);line-height:1.12}
+  .susu-hero .hero-description{max-width:390px;line-height:1.48}
+  .susu-hero .hero-shortcuts{bottom:20px;padding-left:18px;padding-right:18px}
+  .susu-hero .hero-shortcuts a{width:198px;min-width:198px;padding:7px}
+  .susu-hero .hero-shortcuts img{height:58px;width:58px;flex-basis:58px;object-fit:contain;background:#f8e9e5}
+  .intro{padding-top:75px;gap:16px}
+  .cakes{padding-top:42px;padding-bottom:66px}
+  .cake-stage{
+    position:relative;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
+    align-items:start;gap:18px 5px;min-height:0!important;
+    padding:15px 20px 0;
+  }
+  .cake-stage .cake{
+    position:relative!important;top:auto!important;bottom:auto!important;left:auto!important;right:auto!important;
+    width:auto!important;max-width:none;display:block;
+  }
+  .cake-stage .cake.one{grid-column:1/10;grid-row:1;transform:rotate(-2deg)}
+  .cake-stage .cake.two{grid-column:5/13;grid-row:2;margin-top:-22px;transform:rotate(2deg)}
+  .cake-stage .cake.three{grid-column:1/10;grid-row:3;margin-top:-11px;transform:rotate(-1.5deg)}
+  .cake-stage .cake .frame{
+    width:100%;height:auto!important;aspect-ratio:auto;overflow:visible;
+    border-radius:4px;background:#f8efea;box-shadow:0 8px 25px rgba(53,42,46,.09)
+  }
+  .cake-stage .cake img{width:100%;height:auto!important;max-height:540px;object-fit:contain;transform:none}
+  .cake-stage .cake:hover img{transform:none}
+  .cake-stage .cake strong{font-size:clamp(22px,5.8vw,30px);line-height:1.15;overflow-wrap:anywhere;margin:13px 0 7px}
+  .cake-stage .cake small{display:inline-block!important;max-width:100%;font-size:13px;line-height:1.4;padding:0 0 4px;position:relative}
+  .sweets-inner{gap:58px}
+  .sweets-photo{max-width:83%;margin:auto}
+  .sweets-photo img{width:100%;height:auto;object-fit:contain}
+  .seasonal-photo img{max-height:none;height:auto;object-fit:contain}
+  .gallery{align-items:start;grid-auto-flow:row}
+  .gallery-item,.gallery-item:nth-child(n){min-width:0;transform:none;margin:0}
+  .gallery-item:nth-child(5n+1){width:100%}
+  .gallery-item img,.gallery-item:nth-child(n) img{
+    width:100%;height:auto!important;max-height:none;
+    object-fit:contain;object-position:center;background:#f1eee7
+  }
+  .gallery-item span{font-size:12px;line-height:1.35;margin:8px 0 12px}
+  .workshop-grid{gap:32px}
+  .workshop-collage{min-height:0!important;display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:12px;padding:0 3px}
+  .workshop-collage img,.workshop-collage img:first-child,.workshop-collage img:nth-of-type(2){
+    position:relative;top:auto;left:auto;right:auto;bottom:auto;
+    width:100%;height:auto!important;object-fit:contain;transform:none;box-shadow:0 12px 30px #0d291b40;
+    background:#f8e3de
+  }
+  .workshop-collage img:nth-of-type(2){margin-top:37px}
+  .shopfront{max-width:100%;transform:none}
+  .shopfront img{height:auto!important;object-fit:contain;object-position:center}
+  .config-preview{min-height:240px;max-height:none;aspect-ratio:4/3;background:#f4e5df}
+  .config-preview img{object-fit:contain;object-position:center}
+  .insta-grid{gap:12px;align-items:start}
+  .insta-grid img,.insta-grid a:first-child img{
+    width:100%;height:auto!important;max-height:440px;object-fit:contain;object-position:center;
+    background:#f5ebea
+  }
+  .insta-grid a{display:block;min-width:0}
+  .review-list{max-width:100%;scroll-padding-inline:4px}
+  .review{min-width:min(76vw,340px)}
+  .contact .form{gap:15px}
+  .footer-bottom{overflow-wrap:anywhere}
+}
+@media (max-width:430px){
+  .susu-hero .hero-content{padding:110px 21px 205px;min-height:max(930px,113svh)}
+  .hero.susu-hero{min-height:max(930px,113svh)}
+  .susu-hero .hero-brand-heading{font-size:clamp(62px,15.1vw,78px)}
+  .susu-hero .hero-photo{top:43%;height:min(34svh,315px);width:85vw;object-fit:contain}
+  .susu-hero .hero-intro{margin-top:clamp(325px,35svh,425px)}
+  .susu-hero .hero-line{font-size:25px}
+  .susu-hero .hero-shortcuts a{width:180px;min-width:180px}
+  .cake-stage{padding-inline:18px;gap:17px 3px}
+  .cake-stage .cake.one{grid-column:1/11}
+  .cake-stage .cake.two{grid-column:4/13;margin-top:-14px}
+  .cake-stage .cake.three{grid-column:1/11;margin-top:-6px}
+  .gallery{gap:12px}
+  .workshop-collage{gap:10px}
+  .workshop-collage img:nth-of-type(2){margin-top:27px}
+  .sweets-photo h2{max-width:90%}
+  .floating-wa{bottom:15px;right:12px}
+  .cookies:not([hidden]){max-height:27svh;overflow-y:auto}
+}
+@media(prefers-reduced-motion:reduce){
+ .susu-hero .hero-photo{animation:none!important}
+ .cake-stage .cake,.gallery-item{transition:none!important}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Bakery","name":"Brujita Cakes","description":"Pastelería creativa y tartas personalizadas en Mataró","telephone":"+34667534829","address":{"@type":"PostalAddress","streetAddress":"El Torrent, 12","postalCode":"08302","addressLocality":"Mataró","addressRegion":"Barcelona","addressCountry":"ES"},"sameAs":["https://www.instagram.com/brujita_cakes/"],"image":"foto-03.jpg"}</script>
 </head>
